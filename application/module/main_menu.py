@@ -14,9 +14,10 @@ from module.about import AboutScreen
 
 # MAIN SCREEN
 class MenuScreen(QMainWindow, Ui_MenuScreen):
-    def __init__(self):
+    def __init__(self, user):
         super(MenuScreen, self).__init__()
         self.setupUi(self)
+        self.user = user
 
         # Remove title bar
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
@@ -31,7 +32,7 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
         self.btn_settings.clicked.connect(self.settings)
         self.btn_about.clicked.connect(self.about)
         self.btn_admin.clicked.connect(self.admin)
-        self.btn_exit.clicked.connect(sys.exit)
+        self.btn_exit.clicked.connect(self.exit)
 
         self.show()
 
@@ -71,4 +72,9 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
 
     def admin(self):
         pass
+
+
+    def exit(self):
+        self.user.user_quit()
+        sys.exit()
 

@@ -12,6 +12,9 @@ from ui.screen_welcome import Ui_WelcomeScreen
 # Import the modules
 from module.main_menu import MenuScreen
 
+# Import database functions
+import database as db
+
 # Global variables
 counter = 0
 
@@ -49,13 +52,31 @@ class WelcomeScreen(QMainWindow, Ui_WelcomeScreen):
 
 
     def register(self):
-        self.menu = MenuScreen()
-        self.close()
+        first_name = self.input_first.text()
+        last_name = self.input_last.text()
+        email = self.input_email_2.text()
+        password = self.input_pw_2.text()
+        confirm_pw = self.input_pw_3.text()
+
+        registered = db.check_register(first_name, last_name, email, password, confirm_pw)
+        if not registered:
+            pass
+        else:
+            user = db.check_login(email, password)
+            self.menu = MenuScreen(user)
+            self.close()
 
 
     def login(self):
-        self.menu = MenuScreen()
-        self.close()
+        email = self.input_email.text()
+        password = self.input_pw.text()
+
+        user = db.check_login(email, password)
+        if not user:
+            pass
+        else:
+            self.menu = MenuScreen(user)
+            self.close()
 
 
 # Loading screen
