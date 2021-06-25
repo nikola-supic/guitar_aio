@@ -1,0 +1,34 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/logo.jpg</file>
+    <file>images/bg.jpg</file>
+  </qresource>
+  <qresource prefix="practice">
+    <file>images/practice/count.jpg</file>
+    <file>images/practice/exit.jpg</file>
+    <file>images/practice/finish.jpg</file>
+    <file>images/practice/next.jpg</file>
+    <file>images/practice/pause.jpg</file>
+    <file>images/practice/play.jpg</file>
+  </qresource>
+  <qresource prefix="menu">
+    <file>images/menu/about.png</file>
+    <file>images/menu/about_hover.png</file>
+    <file>images/menu/admin.png</file>
+    <file>images/menu/admin_hover.png</file>
+    <file>images/menu/exit.png</file>
+    <file>images/menu/exit_hover.png</file>
+    <file>images/menu/practice.png</file>
+    <file>images/menu/practice_hover.png</file>
+    <file>images/menu/sessions.png</file>
+    <file>images/menu/sessions_hover.png</file>
+    <file>images/menu/settings.png</file>
+    <file>images/menu/settings_hover.png</file>
+    <file>images/menu/songs.png</file>
+    <file>images/menu/songs_hover.png</file>
+    <file>images/menu/stats.png</file>
+    <file>images/menu/stats_hover.png</file>
+    <file>images/menu/top.png</file>
+    <file>images/menu/top_hover.png</file>
+  </qresource>
+</RCC>
