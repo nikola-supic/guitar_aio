@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WelcomeScreen</class>
+ <widget class="QMainWindow" name="WelcomeScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>490</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>490</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#btn_fb, #btn_ig, #btn_yt, #btn_in, #btn_git {
+	background-color: rgba(0,0,0,0);
+	color: rgb(157, 121, 95);
+}
+
+QPushButton#btn_login, #btn_switch, #btn_register {
+	background-color: rgb(157, 121, 95);
+	color: rgb(205,205,205);
+	border-radius: 5px;
+}
+QPushButton#btn_login:hover, #btn_switch:hover, #btn_register:hover {
+	background-color: rgb(130, 100, 78);
+}
+QPushButton#btn_login:pressed, #btn_switch:pressed, #btn_register:pressed {
+	background-color: rgb(118, 91, 71);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QStackedWidget" name="stacked_pages">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>490</width>
+       <height>400</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QStackedWidget#stacked_pages {
+	background-color: rgb(205, 205, 205);
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_login">
+      <widget class="QLabel" name="label_bg">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>245</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/images/images/bg.jpg);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_bg_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>245</width>
+         <height>170</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,75);
+border-radius:0px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_desc">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>201</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgba(255,255,255,200);
+background-color: rgba(0,0,0,0);</string>
+       </property>
+       <property name="text">
+        <string>Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor
+incididunt ut labore et dolore
+magna aliqua</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_credits">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>195</y>
+         <width>211</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgba(255,255,255,200);
+background-color: rgba(0,0,0,0);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Created&lt;/span&gt;: Sule (2020-2021)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_name">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>180</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>22</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgba(255,255,255,200);
+background-color: rgba(0,0,0,0);</string>
+       </property>
+       <property name="text">
+        <string>Guitar AIO</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_login">
+       <property name="geometry">
+        <rect>
+         <x>245</x>
+         <y>35</y>
+         <width>245</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>22</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(157, 121, 95);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SIGN IN &lt;span style=&quot; font-weight:400;&quot;&gt;PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="input_name">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>100</y>
+         <width>195</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0);
+border: none;
+border-bottom: 2px solid rgba(157, 121, 95, 255);
+color: rgba(157, 121, 95, 255);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Username</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="input_pw">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>150</y>
+         <width>195</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0);
+border: none;
+border-bottom: 2px solid rgba(157, 121, 95, 255);
+color: rgba(157, 121, 95, 255);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Password</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_login">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>300</y>
+         <width>195</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>LOGIN</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_bg_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>245</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,25);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_bg</zorder>
+      <zorder>label_bg_2</zorder>
+      <zorder>label_bg_3</zorder>
+      <zorder>label_desc</zorder>
+      <zorder>label_credits</zorder>
+      <zorder>label_name</zorder>
+      <zorder>label_login</zorder>
+      <zorder>input_name</zorder>
+      <zorder>input_pw</zorder>
+      <zorder>btn_login</zorder>
+     </widget>
+     <widget class="QWidget" name="page_register">
+      <widget class="QLabel" name="label_bg_4">
+       <property name="geometry">
+        <rect>
+         <x>245</x>
+         <y>0</y>
+         <width>245</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/images/images/bg_flipped.jpg);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_register">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>300</y>
+         <width>195</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>REGISTER</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="input_pw_3">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>250</y>
+         <width>195</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0);
+border: none;
+border-bottom: 2px solid rgba(157, 121, 95, 255);
+color: rgba(157, 121, 95, 255);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Confirm password</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="input_pw_2">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>200</y>
+         <width>195</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0);
+border: none;
+border-bottom: 2px solid rgba(157, 121, 95, 255);
+color: rgba(157, 121, 95, 255);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Password</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="input_email">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>150</y>
+         <width>195</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0);
+border: none;
+border-bottom: 2px solid rgba(157, 121, 95, 255);
+color: rgba(157, 121, 95, 255);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Username</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="input_first">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>100</y>
+         <width>95</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0);
+border: none;
+border-bottom: 2px solid rgba(157, 121, 95, 255);
+color: rgba(157, 121, 95, 255);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>First Name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="input_last">
+       <property name="geometry">
+        <rect>
+         <x>125</x>
+         <y>100</y>
+         <width>95</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,0);
+border: none;
+border-bottom: 2px solid rgba(157, 121, 95, 255);
+color: rgba(157, 121, 95, 255);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Last Name</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_register">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>35</y>
+         <width>245</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>22</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(157, 121, 95);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SIGN UP &lt;span style=&quot; font-weight:400;&quot;&gt;PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_bg_6">
+       <property name="geometry">
+        <rect>
+         <x>245</x>
+         <y>50</y>
+         <width>245</width>
+         <height>170</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,75);
+border-radius:0px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_credits_2">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>195</y>
+         <width>210</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgba(255,255,255,200);
+background-color: rgba(0,0,0,0);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Created&lt;/span&gt;: Sule (2020-2021)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_name_2">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>50</y>
+         <width>180</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>22</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgba(255,255,255,200);
+background-color: rgba(0,0,0,0);</string>
+       </property>
+       <property name="text">
+        <string>Guitar AIO</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_desc_2">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>80</y>
+         <width>200</width>
+         <height>109</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dubai</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgba(255,255,255,200);
+background-color: rgba(0,0,0,0);</string>
+       </property>
+       <property name="text">
+        <string>Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor
+incididunt ut labore et dolore
+magna aliqua</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>350</y>
+         <width>231</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="grid_social">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="btn_fb">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>E</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btn_ig">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Q</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="btn_in">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="btn_yt">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>M</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QPushButton" name="btn_git">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="label_bg_5">
+       <property name="geometry">
+        <rect>
+         <x>245</x>
+         <y>0</y>
+         <width>245</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0,0,0,25);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_bg_4</zorder>
+      <zorder>label_bg_5</zorder>
+      <zorder>btn_register</zorder>
+      <zorder>input_pw_3</zorder>
+      <zorder>input_pw_2</zorder>
+      <zorder>input_email</zorder>
+      <zorder>input_first</zorder>
+      <zorder>input_last</zorder>
+      <zorder>label_register</zorder>
+      <zorder>label_bg_6</zorder>
+      <zorder>label_credits_2</zorder>
+      <zorder>label_name_2</zorder>
+      <zorder>label_desc_2</zorder>
+      <zorder>gridLayoutWidget_3</zorder>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="btn_switch">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>50</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Dubai</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:10px;</string>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
