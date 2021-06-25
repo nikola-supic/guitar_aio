@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StatsScreen</class>
+ <widget class="QMainWindow" name="StatsScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>490</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>490</width>
+      <height>650</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_top">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>490</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+	background-color: rgb(72,72,73);
+	border-radius: 0px;
+}
+
+QPushButton#btn_toggle, #btn_exit {
+	background-color: rgb(157, 121, 95);
+	color: rgba(255, 255, 255, 210);
+	border-radius: 5px;
+}
+QPushButton#btn_toggle:hover, #btn_exit:hover {
+	background-color: rgb(143, 110, 86);
+}
+QPushButton#btn_toggle:pressed, #btn_exit:pressed {
+	background-color: rgb(130, 100, 78);
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="btn_exit">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>10</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>EXIT</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>-24</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/images/logo.jpg);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_name">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>13</y>
+        <width>481</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>15</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(205,205,205);
+background-color: rgba(0,0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>GUITAR AIO - Stats</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frame_main">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>490</width>
+       <height>600</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_main {
+	border-image: url(:/images/images/bg.jpg);
+}
+QPushButton#btn_reset, #btn_stats, #btn_stats_2, #btn_stats_3, #btn_stats_4 {
+	background-color: rgba(157, 121, 95, 255);
+	color: rgba(255, 255, 255, 210);
+	border-radius: 5px;
+}
+QPushButton#btn_reset:hover, #btn_stats:hover, #btn_stats_2:hover, #btn_stats_3:hover, #btn_stats_4:hover {
+	background-color: rgba(143, 110, 86, 255);
+}
+QPushButton#btn_reset:pressed, #btn_stats:pressed, #btn_stats_2:pressed, #btn_stats_3:pressed, #btn_stats_4:pressed {
+	background-color: rgba(130, 100, 78, 255);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_top">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>0</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(0,0,0,150);
+background-color: rgba(0,0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>STATS</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_line_4">
+      <property name="geometry">
+       <rect>
+        <x>22</x>
+        <y>-23</y>
+        <width>70</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>32</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(255,255,255,255);</string>
+      </property>
+      <property name="text">
+       <string>________________</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_top_2">
+      <property name="geometry">
+       <rect>
+        <x>87</x>
+        <y>5</y>
+        <width>280</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgba(0,0,0,150);
+background-color: rgba(0,0,0,0);</string>
+      </property>
+      <property name="text">
+       <string>- Use this menu to overlook your stats</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_reset">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>560</y>
+        <width>451</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>RESET STATS (be careful using this)</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="label_stats_1">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>450</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(205,205,205,150);
+color: rgb(72,72,73);
+border-radius: 5px;
+border: 2px solid rgba(157, 121, 95, 255);
+padding-bottom: 2px;</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Row #1
+Row #2
+Row #3
+Row #4
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_stats">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>50</y>
+        <width>110</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>ALL TIME</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="label_stats_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>170</y>
+        <width>450</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(205,205,205,150);
+color: rgb(72,72,73);
+border-radius: 5px;
+border: 2px solid rgba(157, 121, 95, 255);
+padding-bottom: 2px;</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Row #1
+Row #2
+Row #3
+Row #4
+</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="label_stats_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>300</y>
+        <width>450</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(205,205,205,150);
+color: rgb(72,72,73);
+border-radius: 5px;
+border: 2px solid rgba(157, 121, 95, 255);
+padding-bottom: 2px;</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Row #1
+Row #2
+Row #3
+Row #4
+</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="label_stats_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>430</y>
+        <width>450</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(205,205,205,150);
+color: rgb(72,72,73);
+border-radius: 5px;
+border: 2px solid rgba(157, 121, 95, 255);
+padding-bottom: 2px;</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Row #1
+Row #2
+Row #3
+Row #4
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_stats_2">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>180</y>
+        <width>110</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>DAILY</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_stats_3">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>310</y>
+        <width>110</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>MONTHLY</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_stats_4">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>440</y>
+        <width>110</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Dubai</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>YEAR</string>
+      </property>
+     </widget>
+     <zorder>label_line_4</zorder>
+     <zorder>label_top_2</zorder>
+     <zorder>label_top</zorder>
+     <zorder>btn_reset</zorder>
+     <zorder>label_stats_1</zorder>
+     <zorder>btn_stats</zorder>
+     <zorder>label_stats_2</zorder>
+     <zorder>label_stats_3</zorder>
+     <zorder>label_stats_4</zorder>
+     <zorder>btn_stats_2</zorder>
+     <zorder>btn_stats_3</zorder>
+     <zorder>btn_stats_4</zorder>
+    </widget>
+    <zorder>frame_main</zorder>
+    <zorder>frame_top</zorder>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
