@@ -19,6 +19,8 @@ from ui.screen_songs import Ui_SongsScreen
 from ui.screen_stats import Ui_StatsScreen
 # SESSIONS SCREEN
 from ui.screen_sessions import Ui_SessionsScreen
+# ABOUT SCREEN
+from ui.screen_about import Ui_AboutScreen
 
 # GLOBAL VARIABLES
 counter = 0
@@ -136,6 +138,20 @@ class SessionsScreen(QMainWindow, Ui_SessionsScreen):
         self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
         self.animation.start()
 
+# ABOUT SCREEN
+class AboutScreen(QMainWindow, Ui_AboutScreen):
+    def __init__(self):
+        super(AboutScreen, self).__init__()
+        self.setupUi(self)
+
+        # Remove title bar
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+        # Events
+
+        self.show()
+
 # MAIN SCREEN
 class MenuScreen(QMainWindow, Ui_MenuScreen):
     def __init__(self):
@@ -151,6 +167,7 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
         self.btn_songs.clicked.connect(self.songs)
         self.btn_stats.clicked.connect(self.stats)
         self.btn_sessions.clicked.connect(self.sessions)
+        self.btn_about.clicked.connect(self.about)
 
         self.show()
 
@@ -168,6 +185,10 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
 
     def sessions(self):
         self.sessions = SessionsScreen()
+        self.close()
+
+    def about(self):
+        self.about = AboutScreen()
         self.close()
 
 # WELCOME SCREEN
@@ -191,12 +212,12 @@ class WelcomeScreen(QMainWindow, Ui_WelcomeScreen):
     def change_form(self):
         if self.login_form:
             self.stacked_pages.setCurrentWidget(self.page_register)
-            self.btn_switch.setText('<')
+            self.btn_switch.setText('>')
 
             self.login_form = False
         else:
             self.stacked_pages.setCurrentWidget(self.page_login)
-            self.btn_switch.setText('>')
+            self.btn_switch.setText('<')
 
             self.login_form = True
 
