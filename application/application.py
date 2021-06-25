@@ -11,6 +11,7 @@ from ui.screen_welcome import Ui_WelcomeScreen
 
 # Import the modules
 from module.main_menu import MenuScreen
+from module.popup import PopupScreen
 
 # Import database functions
 import database as db
@@ -73,7 +74,8 @@ class WelcomeScreen(QMainWindow, Ui_WelcomeScreen):
 
         user = db.check_login(email, password)
         if not user:
-            pass
+            self.popup = PopupScreen(self, 'ERROR', 'INFO #1\nINFOO #2\nINFOOO #3', custom_colors=True, color='95, 155, 157', bg='28, 80, 82', text='0,0,0')
+            self.close()
         else:
             self.menu = MenuScreen(user)
             self.close()
