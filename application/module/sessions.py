@@ -1,6 +1,8 @@
 # Importing the libraries
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtCore import QPropertyAnimation
+
 from ui.screen_sessions import Ui_SessionsScreen
 
 # SESSIONS SCREEN
@@ -10,7 +12,7 @@ class SessionsScreen(QMainWindow, Ui_SessionsScreen):
         self.setupUi(self)
         self.back = last_screen
         self.frame_left.setGeometry(QtCore.QRect(0, 50, 0, 600))
-        self.stacked_pages.setCurrentWidget(self.page_empty)
+        self.stackedWidget.setCurrentWidget(self.page_empty)
 
         # Remove title bar
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)

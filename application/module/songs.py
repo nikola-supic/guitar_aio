@@ -1,6 +1,8 @@
 # Importing the libraries
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtCore import QPropertyAnimation
+
 from ui.screen_songs import Ui_SongsScreen
 
 # SONGS SCREEN
