@@ -72,7 +72,7 @@ class Ui_SessionsScreen(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.label_name = QtWidgets.QLabel(self.frame_top)
-        self.label_name.setGeometry(QtCore.QRect(80, 13, 481, 50))
+        self.label_name.setGeometry(QtCore.QRect(80, 13, 280, 50))
         font = QtGui.QFont()
         font.setFamily("Dubai")
         font.setPointSize(15)

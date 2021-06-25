@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton#btn_fb, #btn_ig, #btn_yt, #btn_in, #btn_git {
+     <string notr="true">QPushButton#btn_fb, #btn_ig, #btn_yt, #btn_in, #btn_git, #btn_fb_2, #btn_ig_2, #btn_yt_2, #btn_in_2, #btn_git_2 {
 	background-color: rgba(0,0,0,0);
 	color: rgb(157, 121, 95);
 }
@@ -35,10 +35,10 @@ QPushButton#btn_login, #btn_switch, #btn_register {
 	border-radius: 5px;
 }
 QPushButton#btn_login:hover, #btn_switch:hover, #btn_register:hover {
-	background-color: rgb(130, 100, 78);
+	background-color: rgb(143, 110, 86);
 }
 QPushButton#btn_login:pressed, #btn_switch:pressed, #btn_register:pressed {
-	background-color: rgb(118, 91, 71);
+	background-color: rgb(130, 100, 78);
 }</string>
     </property>
     <property name="frameShape">
@@ -68,7 +68,7 @@ QPushButton#btn_login:pressed, #btn_switch:pressed, #btn_register:pressed {
       <widget class="QLabel" name="label_bg">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>-15</x>
          <y>0</y>
          <width>245</width>
          <height>400</height>
@@ -86,7 +86,7 @@ QPushButton#btn_login:pressed, #btn_switch:pressed, #btn_register:pressed {
         <rect>
          <x>0</x>
          <y>50</y>
-         <width>245</width>
+         <width>229</width>
          <height>170</height>
         </rect>
        </property>
@@ -183,10 +183,10 @@ background-color: rgba(0,0,0,0);</string>
       <widget class="QLabel" name="label_login">
        <property name="geometry">
         <rect>
-         <x>245</x>
-         <y>35</y>
-         <width>245</width>
-         <height>60</height>
+         <x>230</x>
+         <y>42</y>
+         <width>260</width>
+         <height>40</height>
         </rect>
        </property>
        <property name="font">
@@ -210,9 +210,9 @@ background-color: rgba(0,0,0,0);</string>
       <widget class="QLineEdit" name="input_name">
        <property name="geometry">
         <rect>
-         <x>270</x>
-         <y>100</y>
-         <width>195</width>
+         <x>260</x>
+         <y>150</y>
+         <width>200</width>
          <height>40</height>
         </rect>
        </property>
@@ -239,9 +239,9 @@ padding-bottom: 7px;</string>
       <widget class="QLineEdit" name="input_pw">
        <property name="geometry">
         <rect>
-         <x>270</x>
-         <y>150</y>
-         <width>195</width>
+         <x>260</x>
+         <y>200</y>
+         <width>200</width>
          <height>40</height>
         </rect>
        </property>
@@ -271,9 +271,9 @@ padding-bottom: 7px;</string>
       <widget class="QPushButton" name="btn_login">
        <property name="geometry">
         <rect>
-         <x>270</x>
-         <y>300</y>
-         <width>195</width>
+         <x>260</x>
+         <y>250</y>
+         <width>200</width>
          <height>40</height>
         </rect>
        </property>
@@ -297,7 +297,7 @@ padding-bottom: 7px;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>245</width>
+         <width>230</width>
          <height>400</height>
         </rect>
        </property>
@@ -307,6 +307,122 @@ padding-bottom: 7px;</string>
        <property name="text">
         <string/>
        </property>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>350</y>
+         <width>241</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="grid_social_2">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="btn_fb_2">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>E</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btn_ig_2">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Q</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="btn_in_2">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="btn_yt_2">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>M</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QPushButton" name="btn_git_2">
+          <property name="maximumSize">
+           <size>
+            <width>35</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Social Media Circled</family>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <zorder>label_bg</zorder>
       <zorder>label_bg_2</zorder>
@@ -318,12 +434,13 @@ padding-bottom: 7px;</string>
       <zorder>input_name</zorder>
       <zorder>input_pw</zorder>
       <zorder>btn_login</zorder>
+      <zorder>gridLayoutWidget_4</zorder>
      </widget>
      <widget class="QWidget" name="page_register">
       <widget class="QLabel" name="label_bg_4">
        <property name="geometry">
         <rect>
-         <x>245</x>
+         <x>260</x>
          <y>0</y>
          <width>245</width>
          <height>400</height>
@@ -339,9 +456,9 @@ padding-bottom: 7px;</string>
       <widget class="QPushButton" name="btn_register">
        <property name="geometry">
         <rect>
-         <x>25</x>
+         <x>30</x>
          <y>300</y>
-         <width>195</width>
+         <width>200</width>
          <height>40</height>
         </rect>
        </property>
@@ -363,9 +480,9 @@ padding-bottom: 7px;</string>
       <widget class="QLineEdit" name="input_pw_3">
        <property name="geometry">
         <rect>
-         <x>25</x>
+         <x>30</x>
          <y>250</y>
-         <width>195</width>
+         <width>200</width>
          <height>40</height>
         </rect>
        </property>
@@ -395,9 +512,9 @@ padding-bottom: 7px;</string>
       <widget class="QLineEdit" name="input_pw_2">
        <property name="geometry">
         <rect>
-         <x>25</x>
+         <x>30</x>
          <y>200</y>
-         <width>195</width>
+         <width>200</width>
          <height>40</height>
         </rect>
        </property>
@@ -427,9 +544,9 @@ padding-bottom: 7px;</string>
       <widget class="QLineEdit" name="input_email">
        <property name="geometry">
         <rect>
-         <x>25</x>
+         <x>30</x>
          <y>150</y>
-         <width>195</width>
+         <width>200</width>
          <height>40</height>
         </rect>
        </property>
@@ -456,7 +573,7 @@ padding-bottom: 7px;</string>
       <widget class="QLineEdit" name="input_first">
        <property name="geometry">
         <rect>
-         <x>25</x>
+         <x>30</x>
          <y>100</y>
          <width>95</width>
          <height>40</height>
@@ -485,7 +602,7 @@ padding-bottom: 7px;</string>
       <widget class="QLineEdit" name="input_last">
        <property name="geometry">
         <rect>
-         <x>125</x>
+         <x>135</x>
          <y>100</y>
          <width>95</width>
          <height>40</height>
@@ -515,9 +632,9 @@ padding-bottom: 7px;</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>35</y>
+         <y>42</y>
          <width>245</width>
-         <height>60</height>
+         <height>40</height>
         </rect>
        </property>
        <property name="font">
@@ -541,9 +658,9 @@ padding-bottom: 7px;</string>
       <widget class="QLabel" name="label_bg_6">
        <property name="geometry">
         <rect>
-         <x>245</x>
+         <x>260</x>
          <y>50</y>
-         <width>245</width>
+         <width>231</width>
          <height>170</height>
         </rect>
        </property>
@@ -648,7 +765,7 @@ magna aliqua</string>
         <rect>
          <x>10</x>
          <y>350</y>
-         <width>231</width>
+         <width>241</width>
          <height>41</height>
         </rect>
        </property>
@@ -762,9 +879,9 @@ magna aliqua</string>
       <widget class="QLabel" name="label_bg_5">
        <property name="geometry">
         <rect>
-         <x>245</x>
+         <x>260</x>
          <y>0</y>
-         <width>245</width>
+         <width>230</width>
          <height>400</height>
         </rect>
        </property>
@@ -809,10 +926,10 @@ magna aliqua</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-radius:10px;</string>
+      <string notr="true">border-radius:0px;</string>
      </property>
      <property name="text">
-      <string>&gt;</string>
+      <string>&lt;</string>
      </property>
     </widget>
    </widget>

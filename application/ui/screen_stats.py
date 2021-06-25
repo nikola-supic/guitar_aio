@@ -62,7 +62,7 @@ class Ui_StatsScreen(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.label_name = QtWidgets.QLabel(self.frame_top)
-        self.label_name.setGeometry(QtCore.QRect(20, 13, 481, 50))
+        self.label_name.setGeometry(QtCore.QRect(20, 13, 300, 50))
         font = QtGui.QFont()
         font.setFamily("Dubai")
         font.setPointSize(15)
