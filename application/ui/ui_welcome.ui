@@ -207,7 +207,7 @@ background-color: rgba(0,0,0,0);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="input_name">
+      <widget class="QLineEdit" name="input_email">
        <property name="geometry">
         <rect>
          <x>260</x>
@@ -431,7 +431,7 @@ padding-bottom: 7px;</string>
       <zorder>label_credits</zorder>
       <zorder>label_name</zorder>
       <zorder>label_login</zorder>
-      <zorder>input_name</zorder>
+      <zorder>input_email</zorder>
       <zorder>input_pw</zorder>
       <zorder>btn_login</zorder>
       <zorder>gridLayoutWidget_4</zorder>
@@ -541,7 +541,7 @@ padding-bottom: 7px;</string>
         <string>Password</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="input_email">
+      <widget class="QLineEdit" name="input_email_2">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -897,7 +897,7 @@ magna aliqua</string>
       <zorder>btn_register</zorder>
       <zorder>input_pw_3</zorder>
       <zorder>input_pw_2</zorder>
-      <zorder>input_email</zorder>
+      <zorder>input_email_2</zorder>
       <zorder>input_first</zorder>
       <zorder>input_last</zorder>
       <zorder>label_register</zorder>
