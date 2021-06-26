@@ -53,3 +53,15 @@ class PopupScreen(QMainWindow, Ui_PopupScreen):
     def exit(self):
         self.back.show()
         self.close()
+
+
+def PopupError(last_screen, info, subtitle=''):
+    return PopupScreen(last_screen, 'ERROR!', info, subtitle=subtitle, custom_colors=True, color='204, 18, 18', bg='99,5,5')
+
+
+def PopupWarning(last_screen, info, subtitle=''):
+    return PopupScreen(last_screen, 'WARNING!', info, subtitle=subtitle, custom_colors=True, color='49, 18, 204', bg='12,3,56')
+
+
+def PopupInfo(last_screen, info, subtitle=''):
+    return PopupScreen(last_screen, 'INFO!', info, subtitle=subtitle, custom_colors=True, color='17, 191, 64', bg='4, 69, 22')
