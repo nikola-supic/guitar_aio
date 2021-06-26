@@ -40,42 +40,42 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
 
 
     def practice(self):
-        self.practice = PracticeScreen(self)
+        self.practice = PracticeScreen(self, self.user)
         self.close()
 
 
     def songs(self):
-        self.songs = SongsScreen(self)
+        self.songs = SongsScreen(self, self.user)
         self.close()
 
 
     def stats(self):
-        self.stats = StatsScreen(self)
+        self.stats = StatsScreen(self, self.user)
         self.close()
 
 
     def sessions(self):
-        self.sessions = SessionsScreen(self)
+        self.sessions = SessionsScreen(self, self.user)
         self.close()
 
 
     def top_users(self):
-        self.top = TopScreen(self)
+        self.top = TopScreen(self, self.user)
         self.close()
 
 
     def settings(self):
-        self.settings = SettingsScreen(self)
+        self.settings = SettingsScreen(self, self.user)
         self.close()
 
 
     def about(self):
-        self.about = AboutScreen(self)
+        self.about = AboutScreen(self, self.user)
         self.close()
 
 
     def admin(self):
-        self.admin = AdminScreen(self)
+        self.admin = AdminScreen(self, self.user)
         self.close()
 
 

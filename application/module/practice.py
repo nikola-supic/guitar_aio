@@ -6,10 +6,11 @@ from ui.screen_practice import Ui_PracticeScreen
 
 # PRACTICE SCREEN
 class PracticeScreen(QMainWindow, Ui_PracticeScreen):
-    def __init__(self, last_screen):
+    def __init__(self, last_screen, user):
         super(PracticeScreen, self).__init__()
         self.setupUi(self)
         self.back = last_screen
+        self.user = user
         self.widget_left.setGeometry(QtCore.QRect(200, 50, 0, 550))
         self.widget_right.setGeometry(QtCore.QRect(690, 50, 0, 550))
 

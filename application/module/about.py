@@ -5,10 +5,11 @@ from ui.screen_about import Ui_AboutScreen
 
 # ABOUT SCREEN
 class AboutScreen(QMainWindow, Ui_AboutScreen):
-    def __init__(self, last_screen):
+    def __init__(self, last_screen, user):
         super(AboutScreen, self).__init__()
         self.setupUi(self)
         self.back = last_screen
+        self.user = user
 
         # Remove title bar
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)

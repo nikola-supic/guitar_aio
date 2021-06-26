@@ -6,10 +6,11 @@ from ui.screen_songs import Ui_SongsScreen
 
 # SONGS SCREEN
 class SongsScreen(QMainWindow, Ui_SongsScreen):
-    def __init__(self, last_screen):
+    def __init__(self, last_screen, user):
         super(SongsScreen, self).__init__()
         self.setupUi(self)
         self.back = last_screen
+        self.user = user
         self.frame_left.setGeometry(QtCore.QRect(0, 50, 0, 600))
         self.stackedWidget.setCurrentWidget(self.page_empty)
 

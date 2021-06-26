@@ -67,7 +67,7 @@ class User():
 
 def check_login(email, password):
     sql = "SELECT * FROM users WHERE email=%s AND password=%s"
-    val = (email, password)
+    val = (email, password, )
 
     mycursor.execute(sql, val)
     result = mycursor.fetchone()
@@ -100,4 +100,74 @@ def check_register(first_name, last_name, email, password, confirm_pw):
     except Exception as e:
         print(e)
     return False
+
+
+def delete_user(user_id):
+    sql = "DELETE FROM users WHERE id = %s"
+    val = (user_id, )
+
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
+def reset_user_stats(user_id):
+    sql = "UPDATE stats SET all_last=0, all_time=0, all_sessions=0, all_songs=0 WHERE user_id=%s"
+    val = (user_id, )
+    mycursor.execute(sql, val)
+    mydb.commit() 
+
+    sql = "UPDATE stats SET day_last=0, day_time=0, day_sessions=0, day_songs=0 WHERE user_id=%s"
+    val = (user_id, )
+    mycursor.execute(sql, val)
+    mydb.commit() 
+
+    sql = "UPDATE stats SET month_last=0, month_time=0, month_sessions=0, month_songs=0 WHERE user_id=%s"
+    val = (user_id, )
+    mycursor.execute(sql, val)
+    mydb.commit() 
+
+    sql = "UPDATE stats SET year_last=0, year_time=0, year_sessions=0, year_songs=0 WHERE user_id=%s"
+    val = (user_id, )
+    mycursor.execute(sql, val)
+    mydb.commit() 
+
+
+def get_online():
+    mycursor.execute("SELECT id, first_name, last_name FROM users WHERE online=1")
+    result = mycursor.fetchall()
+    return result
+
+
+def search_user(user_name):
+    sql = "SELECT id, first_name, last_name, email FROM users WHERE email LIKE %s"
+    val = (user_name, )
+
+    mycursor.execute(sql, val)
+    result = mycursor.fetchone()
+    return result
+
         
+# song-related functions
+def add_song(user_id, author, name, chords):
+    sql = "INSERT INTO songs (user_id, author, name, chords) VALUES (%s, %s, %s, %s)"
+    val = (user_id, author, name, chords, )
+
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
+def search_song(song_name):
+    sql = "SELECT * FROM songs WHERE name LIKE %s"
+    val = (song_name, )
+
+    mycursor.execute(sql, val)
+    result = mycursor.fetchall()
+    return result
+
+
+def delete_song(song_id):
+    sql = "DELETE FROM songs WHERE id = %s"
+    val = (song_id, )
+
+    mycursor.execute(sql, val)
+    mydb.commit()
