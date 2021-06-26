@@ -25,6 +25,8 @@ class WelcomeScreen(QMainWindow, Ui_WelcomeScreen):
     def __init__(self):
         super(WelcomeScreen, self).__init__()
         self.setupUi(self)
+        self.input_email.setText('username')
+        self.input_pw.setText('123456789')
 
         # Remove title bar
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
