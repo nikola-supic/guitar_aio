@@ -22,20 +22,20 @@ class PracticeScreen(QMainWindow, Ui_PracticeScreen):
 
         self.show()
 
-        # ANIMATION
-        self.animation = QPropertyAnimation(self.widget_left, b"geometry")
-        self.animation.setDuration(2000)
-        self.animation.setStartValue(QtCore.QRect(200, 50, 0, 550))
-        self.animation.setEndValue(QtCore.QRect(0, 50, 200, 550))
-        self.animation.setEasingCurve(QtCore.QEasingCurve.OutBounce)
-        self.animation.start()
-
-        self.animation_1 = QPropertyAnimation(self.widget_right, b"geometry")
+        # Opening animation
+        self.animation_1 = QPropertyAnimation(self.widget_left, b"geometry")
         self.animation_1.setDuration(2000)
-        self.animation_1.setStartValue(QtCore.QRect(690, 50, 0, 550))
-        self.animation_1.setEndValue(QtCore.QRect(690, 50, 90, 550))
+        self.animation_1.setStartValue(QtCore.QRect(200, 50, 0, 550))
+        self.animation_1.setEndValue(QtCore.QRect(0, 50, 200, 550))
         self.animation_1.setEasingCurve(QtCore.QEasingCurve.OutBounce)
         self.animation_1.start()
+
+        self.animation_2 = QPropertyAnimation(self.widget_right, b"geometry")
+        self.animation_2.setDuration(2000)
+        self.animation_2.setStartValue(QtCore.QRect(690, 50, 0, 550))
+        self.animation_2.setEndValue(QtCore.QRect(690, 50, 90, 550))
+        self.animation_2.setEasingCurve(QtCore.QEasingCurve.OutBounce)
+        self.animation_2.start()
 
 
 

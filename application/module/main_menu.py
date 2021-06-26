@@ -11,7 +11,7 @@ from module.stats import StatsScreen
 from module.sessions import SessionsScreen
 from module.top import TopScreen
 from module.about import AboutScreen
-
+from module.admin import AdminScreen
 
 # MAIN SCREEN
 class MenuScreen(QMainWindow, Ui_MenuScreen):
@@ -73,7 +73,8 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
 
 
     def admin(self):
-        pass
+        self.admin = AdminScreen(self)
+        self.close()
 
 
     def exit(self):
