@@ -18,7 +18,7 @@ import database as db
 
 # Global variables
 counter = 0
-
+db_user = None
 
 # Welcome screen (login/register)
 class WelcomeScreen(QMainWindow, Ui_WelcomeScreen):
@@ -66,7 +66,9 @@ class WelcomeScreen(QMainWindow, Ui_WelcomeScreen):
             self.popup = PopupError(self, 'You entered wrong information.', 'COULD NOT REGISTER')
             self.close()
         else:
+            global db_user
             user = db.check_login(email, password)
+            db_user = user
             self.menu = MenuScreen(user)
             self.close()
 
@@ -80,6 +82,8 @@ class WelcomeScreen(QMainWindow, Ui_WelcomeScreen):
             self.popup = PopupError(self, 'Wrong username or password.', 'COULD NOT LOGIN')
             self.close()
         else:
+            global db_user
+            db_user = user
             self.menu = MenuScreen(user)
             self.close()
 
@@ -97,12 +101,12 @@ class LoadingScreen(QMainWindow, Ui_LoadingScreen):
         # Loading timer
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.progress)
-        self.timer.start(20)
+        self.timer.start(15)
 
         # Change Texts
-        QtCore.QTimer.singleShot(1000, lambda: self.label_description.setText("<strong>WELCOME</strong> TO GUITAR <strong>AIO</strong>"))
-        QtCore.QTimer.singleShot(2000, lambda: self.label_description.setText("<strong>LOADING</strong> DATABASE"))
-        QtCore.QTimer.singleShot(3000, lambda: self.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
+        QtCore.QTimer.singleShot(100, lambda: self.label_description.setText("<strong>WELCOME</strong> TO GUITAR <strong>AIO</strong>"))
+        QtCore.QTimer.singleShot(200, lambda: self.label_description.setText("<strong>LOADING</strong> DATABASE"))
+        QtCore.QTimer.singleShot(300, lambda: self.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
 
         self.show()
 
@@ -123,4 +127,7 @@ class LoadingScreen(QMainWindow, Ui_LoadingScreen):
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = LoadingScreen()
-    sys.exit(app.exec_())
+    app.exec_()
+    if db_user is not None:
+        db_user.user_quit()
+    sys.exit()

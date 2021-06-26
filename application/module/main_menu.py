@@ -10,6 +10,7 @@ from module.songs import SongsScreen
 from module.stats import StatsScreen
 from module.sessions import SessionsScreen
 from module.top import TopScreen
+from module.settings import SettingsScreen
 from module.about import AboutScreen
 from module.admin import AdminScreen
 
@@ -64,7 +65,8 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
 
 
     def settings(self):
-        pass
+        self.settings = SettingsScreen(self)
+        self.close()
 
 
     def about(self):
