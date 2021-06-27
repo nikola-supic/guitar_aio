@@ -102,6 +102,14 @@ def check_register(first_name, last_name, email, password, confirm_pw):
     return False
 
 
+def change_name(user_id, first_name, last_name):
+    sql = "UPDATE users SET first_name = %s, last_name = %s WHERE id = %s"
+    val = (first_name, last_name, user_id, )
+
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
 def delete_user(user_id):
     sql = "DELETE FROM users WHERE id = %s"
     val = (user_id, )
