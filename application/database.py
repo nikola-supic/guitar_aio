@@ -63,7 +63,31 @@ def reset_user_stats(user_id):
     sql = "UPDATE stats SET year_last=0, year_time=0, year_sessions=0, year_songs=0 WHERE user_id=%s"
     val = (user_id, )
     mycursor.execute(sql, val)
-    mydb.commit() 
+    mydb.commit()
+
+
+def get_top_overall():
+    mycursor.execute("SELECT user_id, all_time, all_sessions, all_songs FROM stats ORDER BY all_time DESC, all_sessions ASC LIMIT 100")
+    result = mycursor.fetchall()
+    return result
+
+
+def get_top_daily():
+    mycursor.execute("SELECT user_id, day_time, day_sessions, day_songs FROM stats ORDER BY day_time DESC, day_sessions ASC LIMIT 100")
+    result = mycursor.fetchall()
+    return result
+
+
+def get_top_monthly():
+    mycursor.execute("SELECT user_id, month_time, month_sessions, month_songs FROM stats ORDER BY month_time DESC, month_sessions ASC LIMIT 100")
+    result = mycursor.fetchall()
+    return result
+
+
+def get_top_yearly():
+    mycursor.execute("SELECT user_id, year_time, year_sessions, year_songs FROM stats ORDER BY year_time DESC, year_sessions ASC LIMIT 100")
+    result = mycursor.fetchall()
+    return result
 
 
 
@@ -155,6 +179,15 @@ def check_register(first_name, last_name, email, password, confirm_pw):
     return False
 
 
+def search_user(user_name):
+    sql = "SELECT id, first_name, last_name, email FROM users WHERE email LIKE %s"
+    val = (user_name, )
+
+    mycursor.execute(sql, val)
+    result = mycursor.fetchone()
+    return result
+
+
 def change_name(user_id, first_name, last_name):
     sql = "UPDATE users SET first_name = %s, last_name = %s WHERE id = %s"
     val = (first_name, last_name, user_id, )
@@ -177,13 +210,13 @@ def get_online():
     return result
 
 
-def search_user(user_name):
-    sql = "SELECT id, first_name, last_name, email FROM users WHERE email LIKE %s"
-    val = (user_name, )
+def get_name(user_id):
+    sql = "SELECT first_name, last_name FROM users WHERE id = %s"
+    val = (user_id, )
 
     mycursor.execute(sql, val)
     result = mycursor.fetchone()
-    return result
+    return f'{result[0]} {result[1]}'
 
         
 # song-related functions

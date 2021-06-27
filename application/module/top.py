@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtCore import QPropertyAnimation
 from ui.screen_top import Ui_TopScreen
 
+import database as db
+
 # SONGS SCREEN
 class TopScreen(QMainWindow, Ui_TopScreen):
     def __init__(self, last_screen, user):
@@ -13,6 +15,8 @@ class TopScreen(QMainWindow, Ui_TopScreen):
         self.user = user
         self.frame_left.setGeometry(QtCore.QRect(0, 50, 0, 600))
         self.stackedWidget.setCurrentWidget(self.page_empty)
+
+        self.update_top_users()
 
         # Remove title bar
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
@@ -50,6 +54,56 @@ class TopScreen(QMainWindow, Ui_TopScreen):
         self.animation.setEndValue(QtCore.QSize(new_width, height))
         self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
         self.animation.start()
+
+
+    def update_top_users(self):
+        # Updating top users (overall)
+        result = db.get_top_overall()
+        for user in result:
+            user_id = user[0]
+            name = db.get_name(user_id)
+            time = user[1]
+            no_sessions = user[2]
+            no_songs = user[3]
+
+            item = QtWidgets.QListWidgetItem(f'#{user_id} - {name} - Time: {time} - No. sessions: {no_sessions} ({no_songs})')
+            self.list_overall.addItem(item)
+
+        # Updating top users (daily)
+        result = db.get_top_daily()
+        for user in result:
+            user_id = user[0]
+            name = db.get_name(user_id)
+            time = user[1]
+            no_sessions = user[2]
+            no_songs = user[3]
+
+            item = QtWidgets.QListWidgetItem(f'#{user_id} - {name} - Time: {time} - No. sessions: {no_sessions} ({no_songs})')
+            self.list_daily.addItem(item)
+
+        # Updating top users (monthly)
+        result = db.get_top_monthly()
+        for user in result:
+            user_id = user[0]
+            name = db.get_name(user_id)
+            time = user[1]
+            no_sessions = user[2]
+            no_songs = user[3]
+
+            item = QtWidgets.QListWidgetItem(f'#{user_id} - {name} - Time: {time} - No. sessions: {no_sessions} ({no_songs})')
+            self.list_monthly.addItem(item)
+
+        # Updating top users (yearly)
+        result = db.get_top_yearly()
+        for user in result:
+            user_id = user[0]
+            name = db.get_name(user_id)
+            time = user[1]
+            no_sessions = user[2]
+            no_songs = user[3]
+
+            item = QtWidgets.QListWidgetItem(f'#{user_id} - {name} - Time: {time} - No. sessions: {no_sessions} ({no_songs})')
+            self.list_yearly.addItem(item)
 
 
     def exit(self):
