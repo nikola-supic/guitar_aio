@@ -44,6 +44,48 @@ class UserStats():
         self.yearly = [None, 0, 0, 0]
 
 
+    def update(self, session_time, no_songs):
+        # overall update
+        self.overall[0] = datetime.now()
+        self.overall[1] += session_time
+        self.overall[2] += 1
+        self.overall[3] += no_songs
+        sql = "UPDATE stats SET all_last=%s, all_time=%s, all_sessions=%s, all_songs=%s WHERE user_id=%s"
+        val = (self.overall[0], self.overall[1], self.overall[2], self.overall[3], self.user_id, )
+        mycursor.execute(sql, val)
+        mydb.commit() 
+
+        # daily update
+        self.daily[0] = datetime.now()
+        self.daily[1] += session_time
+        self.daily[2] += 1
+        self.daily[3] += no_songs
+        sql = "UPDATE stats SET day_last=%s, day_time=%s, day_sessions=%s, day_songs=%s WHERE user_id=%s"
+        val = (self.daily[0], self.daily[1], self.daily[2], self.daily[3], self.user_id, )
+        mycursor.execute(sql, val)
+        mydb.commit() 
+
+        # monthly update
+        self.monthly[0] = datetime.now()
+        self.monthly[1] += session_time
+        self.monthly[2] += 1
+        self.monthly[3] += no_songs
+        sql = "UPDATE stats SET month_last=%s, month_time=%s, month_sessions=%s, month_songs=%s WHERE user_id=%s"
+        val = (self.monthly[0], self.monthly[1], self.monthly[2], self.monthly[3], self.user_id, )
+        mycursor.execute(sql, val)
+        mydb.commit() 
+
+        # yearly update
+        self.yearly[0] = datetime.now()
+        self.yearly[1] += session_time
+        self.yearly[2] += 1
+        self.yearly[3] += no_songs
+        sql = "UPDATE stats SET year_last=%s, year_time=%s, year_sessions=%s, year_songs=%s WHERE user_id=%s"
+        val = (self.yearly[0], self.yearly[1], self.yearly[2], self.yearly[3], self.user_id, )
+        mycursor.execute(sql, val)
+        mydb.commit()
+
+
 def reset_user_stats(user_id):
     sql = "UPDATE stats SET all_last=0, all_time=0, all_sessions=0, all_songs=0 WHERE user_id=%s"
     val = (user_id, )

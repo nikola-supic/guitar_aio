@@ -36,7 +36,7 @@ class Ui_PracticeScreen(object):
         self.list_songs.setGeometry(QtCore.QRect(0, 20, 200, 510))
         font = QtGui.QFont()
         font.setFamily("Dubai")
-        font.setPointSize(11)
+        font.setPointSize(8)
         font.setBold(True)
         font.setWeight(75)
         self.list_songs.setFont(font)
@@ -61,44 +61,6 @@ class Ui_PracticeScreen(object):
         self.list_songs.setViewMode(QtWidgets.QListView.ListMode)
         self.list_songs.setSelectionRectVisible(False)
         self.list_songs.setObjectName("list_songs")
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
         item = QtWidgets.QListWidgetItem()
         self.list_songs.addItem(item)
         self.widget_mid = QtWidgets.QWidget(self.frame)
@@ -126,7 +88,7 @@ class Ui_PracticeScreen(object):
         self.label_author.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_author.setObjectName("label_author")
         self.label_name = QtWidgets.QLabel(self.widget_mid)
-        self.label_name.setGeometry(QtCore.QRect(15, 47, 450, 30))
+        self.label_name.setGeometry(QtCore.QRect(14, 47, 450, 30))
         font = QtGui.QFont()
         font.setFamily("Dubai")
         font.setPointSize(11)
@@ -141,7 +103,7 @@ class Ui_PracticeScreen(object):
         self.text_chords.setGeometry(QtCore.QRect(10, 70, 470, 572))
         font = QtGui.QFont()
         font.setFamily("Consolas")
-        font.setPointSize(11)
+        font.setPointSize(10)
         font.setBold(False)
         font.setWeight(50)
         self.text_chords.setFont(font)
@@ -286,81 +248,67 @@ class Ui_PracticeScreen(object):
         __sortingEnabled = self.list_songs.isSortingEnabled()
         self.list_songs.setSortingEnabled(False)
         item = self.list_songs.item(0)
-        item.setText(_translate("PracticeScreen", "Laku noc moja mala barbiko"))
-        item = self.list_songs.item(1)
-        item.setText(_translate("PracticeScreen", "2"))
-        item = self.list_songs.item(2)
-        item.setText(_translate("PracticeScreen", "3"))
-        item = self.list_songs.item(3)
-        item.setText(_translate("PracticeScreen", "4"))
-        item = self.list_songs.item(4)
-        item.setText(_translate("PracticeScreen", "5"))
-        item = self.list_songs.item(5)
-        item.setText(_translate("PracticeScreen", "6"))
-        item = self.list_songs.item(6)
-        item.setText(_translate("PracticeScreen", "7"))
-        item = self.list_songs.item(7)
-        item.setText(_translate("PracticeScreen", "8"))
-        item = self.list_songs.item(8)
-        item.setText(_translate("PracticeScreen", "9"))
-        item = self.list_songs.item(9)
-        item.setText(_translate("PracticeScreen", "10"))
-        item = self.list_songs.item(10)
-        item.setText(_translate("PracticeScreen", "11"))
-        item = self.list_songs.item(11)
-        item.setText(_translate("PracticeScreen", "12"))
-        item = self.list_songs.item(12)
-        item.setText(_translate("PracticeScreen", "13"))
-        item = self.list_songs.item(13)
-        item.setText(_translate("PracticeScreen", "14"))
-        item = self.list_songs.item(14)
-        item.setText(_translate("PracticeScreen", "15"))
-        item = self.list_songs.item(15)
-        item.setText(_translate("PracticeScreen", "Laku noc moja mala barbiko"))
-        item = self.list_songs.item(16)
-        item.setText(_translate("PracticeScreen", "17"))
-        item = self.list_songs.item(17)
-        item.setText(_translate("PracticeScreen", "18"))
-        item = self.list_songs.item(18)
-        item.setText(_translate("PracticeScreen", "19"))
-        item = self.list_songs.item(19)
-        item.setText(_translate("PracticeScreen", "20"))
+        item.setText(_translate("PracticeScreen", "Dino Merlin - Laku noc moja mala barbiko"))
         self.list_songs.setSortingEnabled(__sortingEnabled)
-        self.label_author.setText(_translate("PracticeScreen", "DINO MERLIN"))
-        self.label_name.setText(_translate("PracticeScreen", "LAKU NOC MOJA MALA BARBIKO"))
-        self.text_chords.setPlainText(_translate("PracticeScreen", "Gm\n"
-"Sanjam sleces na moj prag\n"
-"Gm\n"
-"ja prostirem svilen sag\n"
-"F\n"
-"tvoja mokra stopala\n"
-"Dm\n"
-"sad bi tako plesala\n"
+        self.label_author.setText(_translate("PracticeScreen", "SONG AUTHOR"))
+        self.label_name.setText(_translate("PracticeScreen", "SONG TITLE"))
+        self.text_chords.setPlainText(_translate("PracticeScreen", "Dm---------------------\n"
+"U levoj ruci, viski s ledom\n"
+"-----------------------\n"
+"u desnoj, tvoja haljina\n"
+"---------------------------\n"
+"i sta da uzmem, kojim redom\n"
+"Bb--------------C-Dm\n"
+"hop, hop, nisi ti naivna\n"
 "\n"
-"sanjam kisu crven krov\n"
-"da se budim kao nov\n"
-"sanjam davno sanjano\n"
-"sto mi nije sudjeno.\n"
+"Dm-----------------------\n"
+"Nemoj da glumis mi neznanca\n"
+"----------------------------\n"
+"i ti si kao neshvacen\n"
+"-----------------------------\n"
+"imam za tebe zenskog mamca\n"
+"Bb---------------C-Dm\n"
+"hop, hop, i bices uhvacen\n"
 "\n"
-"Prsti djeradan za tvoj vrat\n"
-"mlade usne vode rat\n"
-"i sve teze podnosim\n"
-"sto te vrijeme odnosi.\n"
+"Gm------------C------------\n"
+"Nocas mi se ne izlazi iz stana\n"
+"Bb---------A\n"
+"haljina mi zguzvana\n"
 "\n"
-"Ide ko zna koja zima\n"
-"na put oko svijeta\n"
-"lazu te kad kazu\n"
-"da sam sretan.\n"
+"    Refren \n"
+"    Dm-------------------------\n"
+"    Neki rekli bi da je pornografija \n"
+"    ----------Bb-s-------\n"
+"    ma, neka nam se desi \n"
+"    C-------------Dm/D/Dm\n"
+"    dok smo mladi ti i ja\n"
+"    Dm----------------------------\n"
+"    daj da radimo te stvari nesvesno\n"
+"    Bb---------C---------------Dm/D/Dm\n"
+"    a ujutru svako svojoj kuci ekspresno\n"
+"\n"
+"Dm/D/Dm    Dm/D/Dm\n"
+"Ekspresno, ekspresno\n"
+"\n"
+"Od donjeg vesa nemam nista\n"
+"Zelja me oblacila\n"
+"A neka krpica na meni\n"
+"Sta, sta, sta bi ti znacila\n"
+"\n"
+"Molim Boga da me smire\n"
+"Samo tvoji dodiri\n"
+"A ispod mire djavo viri\n"
+"Sta, sta da ti se uradi\n"
+"\n"
+"Da mislim koja ce doci posle tebe\n"
+"Stvarno nema potrebe\n"
 "\n"
 "    Refren 2x\n"
-"    A# F  A#       F\n"
-"    La ku noc moja mala barbiko\n"
-"          A#             F\n"
-"    dzaba sve, al ja sam na te naviko\n"
-"        D#     Cm\n"
-"    usnama slucajno\n"
-"        Gm    F     Gm\n"
-"    ali srcem beskrajno"))
+"\n"
+"Nocas mi se ne izlazi iz stana\n"
+"Haljina mi zguzvana\n"
+"\n"
+"    Refren 2x"))
         self.label_time.setText(_translate("PracticeScreen", "12:34"))
         self.label_songs.setText(_translate("PracticeScreen", "0"))
 import res_rc

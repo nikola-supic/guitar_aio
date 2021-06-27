@@ -8,7 +8,6 @@ from module.popup import PopupInfo
 
 import database as db
 import pyscreenshot as ss
-from time import sleep
 
 # SONGS SCREEN
 class SongsScreen(QMainWindow, Ui_SongsScreen):
@@ -139,8 +138,8 @@ class SongsScreen(QMainWindow, Ui_SongsScreen):
 
 
     def add_user_song(self):
-        songs = self.list_search.selectedItems()
-        song_id = songs[0].text()[1:2]
+        selected = self.list_search.selectedItems()
+        song_id = selected[0].text()[1:2]
 
         if not db.already_in_playlist(self.user.id, song_id):
             db.add_user_song(self.user.id, song_id)
