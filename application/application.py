@@ -16,6 +16,10 @@ from module.popup import PopupError
 # Import database functions
 import database as db
 
+# Importing libraries for social media buttons
+import webbrowser
+from social_media import links
+
 # Global variables
 counter = 0
 db_user = None
@@ -37,6 +41,17 @@ class WelcomeScreen(QMainWindow, Ui_WelcomeScreen):
         self.btn_switch.clicked.connect(self.change_form)
         self.btn_register.clicked.connect(self.register)
         self.btn_login.clicked.connect(self.login)
+
+        self.btn_fb.clicked.connect(lambda: webbrowser.open(links['fb']))
+        self.btn_fb_2.clicked.connect(lambda: webbrowser.open(links['fb']))
+        self.btn_ig.clicked.connect(lambda: webbrowser.open(links['ig']))
+        self.btn_ig_2.clicked.connect(lambda: webbrowser.open(links['ig']))
+        self.btn_yt.clicked.connect(lambda: webbrowser.open(links['yt']))
+        self.btn_yt_2.clicked.connect(lambda: webbrowser.open(links['yt']))
+        self.btn_in.clicked.connect(lambda: webbrowser.open(links['in']))
+        self.btn_in_2.clicked.connect(lambda: webbrowser.open(links['in']))
+        self.btn_git.clicked.connect(lambda: webbrowser.open(links['git']))
+        self.btn_git_2.clicked.connect(lambda: webbrowser.open(links['git']))
 
         self.show()
 
