@@ -309,6 +309,6 @@ class Ui_PracticeScreen(object):
 "Haljina mi zguzvana\n"
 "\n"
 "    Refren 2x"))
-        self.label_time.setText(_translate("PracticeScreen", "12:34"))
+        self.label_time.setText(_translate("PracticeScreen", "00:00:00"))
         self.label_songs.setText(_translate("PracticeScreen", "0"))
 import res_rc
