@@ -479,7 +479,7 @@ QPushButton#btn_start:pressed, #btn_pause:pressed, #btn_finish:pressed, #btn_nex
        <string notr="true">border-image: url(:/practice/images/practice/count.jpg);</string>
       </property>
       <property name="text">
-       <string>12:34</string>
+       <string>00:00:00</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
