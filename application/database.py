@@ -450,7 +450,7 @@ def request_session(user_id, session_id):
     for count, row in enumerate(result):
         song = SessionSong(row)
         song_name = get_song_name(song.song_id) 
-        output_text += f'[{count+1} // #{song.song_id}] {song_name} // {timedelta(seconds=song.song_time)}\n'
+        output_text += f'[{count+1}] {song_name} // {timedelta(seconds=song.song_time)}\n'
 
     avg_time = session.length / session.no_songs
     output_text += f'\nTOTAL PRACTICE TIME: {timedelta(seconds=session.length)}\n'
