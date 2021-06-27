@@ -545,7 +545,7 @@ class Ui_AdminScreen(object):
         self.input_chords.setPlaceholderText(_translate("AdminScreen", "Chords"))
         self.btn_search_2.setText(_translate("AdminScreen", "SEARCH"))
         self.label_search_2.setPlainText(_translate("AdminScreen", "Use button below to search for song from DB using song\'s name."))
-        self.input_search_2.setPlaceholderText(_translate("AdminScreen", "Song name"))
+        self.input_search_2.setPlaceholderText(_translate("AdminScreen", "Song name/author"))
         self.btn_delete.setText(_translate("AdminScreen", "DELETE"))
         self.input_delete.setPlaceholderText(_translate("AdminScreen", "Song ID"))
         self.label_delete.setPlainText(_translate("AdminScreen", "Use button below to delete song from DB.\n"

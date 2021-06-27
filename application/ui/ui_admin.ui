@@ -872,7 +872,7 @@ QListWidget::item:selected {
          <string/>
         </property>
         <property name="placeholderText">
-         <string>Song name</string>
+         <string>Song name/author</string>
         </property>
        </widget>
        <widget class="QListWidget" name="list_search">

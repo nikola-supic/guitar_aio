@@ -83,9 +83,9 @@ class AdminScreen(QMainWindow, Ui_AdminScreen):
         self.list_online.clear()
 
         result = db.get_online()
-        for item in result:
-            user_id = item[0]
-            name = f'{item[1]} {item[2]}'
+        for user in result:
+            user_id = user[0]
+            name = f'{user[1]} {user[2]}'
 
             item = QtWidgets.QListWidgetItem(f'#{user_id} // {name}')
             self.list_online.addItem(item)

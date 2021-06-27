@@ -228,9 +228,9 @@ def add_song(user_id, author, name, chords):
     mydb.commit()
 
 
-def search_song(song_name):
-    sql = "SELECT * FROM songs WHERE name LIKE %s"
-    val = (song_name, )
+def search_song(search):
+    sql = "SELECT * FROM songs WHERE name LIKE CONCAT('%',%s,'%') OR author LIKE CONCAT('%',%s,'%')"
+    val = (search, search, )
 
     mycursor.execute(sql, val)
     result = mycursor.fetchall()
