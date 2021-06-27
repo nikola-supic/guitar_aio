@@ -367,3 +367,94 @@ def get_user_songs(user_id):
     mycursor.execute(sql, val)
     result = mycursor.fetchall()
     return result
+
+
+# sessions-related functions
+class Session():
+    """
+    DOCSTRING:
+
+    """
+    def __init__(self, result):
+        self.id = result[0]
+        self.user_id = result[1]
+        self.date = result[2]
+        self.length = result[3]
+        self.no_songs = result[4]
+
+
+class SessionSong():
+    """
+    DOCSTRING:
+
+    """
+    def __init__(self, result):
+        self.id = result[0]
+        self.session_id = result[1]
+        self.song_id = result[2]
+        self.song_time = result[3]
+
+
+def add_session(user_id, practice_time, practice_list, practice_time_list):
+    no_songs = len(practice_list)    
+    sql = "INSERT INTO sessions (user_id, date, length, no_songs) VALUES (%s, now(), %s, %s)"
+    val = (user_id, practice_time, no_songs, )
+
+    mycursor.execute(sql, val)
+    session_id = mycursor.lastrowid
+    mydb.commit()
+
+    for song_id, song_time in zip(practice_list, practice_time_list):
+        sql = "INSERT INTO session_songs (session_id, song_id, time) VALUES (%s, %s, %s)"
+        val = (session_id, song_id, song_time)
+
+        mycursor.execute(sql, val)
+        mydb.commit()
+
+
+def get_user_sessions(user_id):
+    sql = "SELECT id, length, no_songs FROM sessions WHERE user_id = %s"
+    val = (user_id, )
+
+    mycursor.execute(sql, val)
+    result = mycursor.fetchall()
+    return result
+
+
+def delete_session(session_id):
+    sql = "DELETE FROM sessions WHERE id = %s"
+    val = (session_id, )
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+    sql = "DELETE FROM session_songs WHERE session_id = %s"
+    val = (session_id, )
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
+def request_session(user_id, session_id):
+    sql = "SELECT * FROM sessions WHERE user_id = %s AND id = %s"
+    val = (user_id, session_id, )
+    mycursor.execute(sql, val)
+    result = mycursor.fetchone()
+    if result is None:
+        return False
+    session = Session(result)
+
+    output_text = ''
+    sql = "SELECT * FROM session_songs WHERE session_id = %s"
+    val = (session_id, )
+    mycursor.execute(sql, val)
+    result = mycursor.fetchall()
+    for count, row in enumerate(result):
+        song = SessionSong(row)
+        song_name = get_song_name(song.song_id) 
+        output_text += f'[{count+1} // #{song.song_id}] {song_name} // {timedelta(seconds=song.song_time)}\n'
+
+    avg_time = session.length / session.no_songs
+    output_text += f'\nTOTAL PRACTICE TIME: {timedelta(seconds=session.length)}\n'
+    output_text += f'NO. SONGS PRACTICED: {session.no_songs}\n'
+    output_text += f'AVERAGE SONG TIME: {timedelta(seconds=avg_time)}\n'
+    output_text += f'DATE: {session.date}\n'
+    return output_text

@@ -218,6 +218,7 @@ class PracticeScreen(QMainWindow, Ui_PracticeScreen):
                 self.text_chords.setPlainText(output_text)
 
                 # add session to db
+                db.add_session(self.user.id, self.practice_time, self.practice_list, self.practice_time_list)
 
                 # update user stats
                 self.user.stats.update(self.practice_time, len(self.practice_list))
