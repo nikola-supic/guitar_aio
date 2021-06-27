@@ -23,6 +23,50 @@ try:
 except mysql.connector.errors.InterfaceError: 
     print('[ - ] Can not connect to database.')
 
+# stats-related functions
+class UserStats():
+    """
+    DOCSTRING:
+
+    """
+    def __init__(self, result):
+        self.user_id = result[0]
+        self.overall = [result[1], result[2], result[3], result[4]]
+        self.daily = [result[5], result[6], result[7], result[8]]
+        self.monthly = [result[9], result[10], result[11], result[12]]
+        self.yearly = [result[13], result[14], result[15], result[16]]
+
+
+    def reset(self):
+        self.overall = [None, 0, 0, 0]
+        self.daily = [None, 0, 0, 0]
+        self.monthly = [None, 0, 0, 0]
+        self.yearly = [None, 0, 0, 0]
+
+
+def reset_user_stats(user_id):
+    sql = "UPDATE stats SET all_last=0, all_time=0, all_sessions=0, all_songs=0 WHERE user_id=%s"
+    val = (user_id, )
+    mycursor.execute(sql, val)
+    mydb.commit() 
+
+    sql = "UPDATE stats SET day_last=0, day_time=0, day_sessions=0, day_songs=0 WHERE user_id=%s"
+    val = (user_id, )
+    mycursor.execute(sql, val)
+    mydb.commit() 
+
+    sql = "UPDATE stats SET month_last=0, month_time=0, month_sessions=0, month_songs=0 WHERE user_id=%s"
+    val = (user_id, )
+    mycursor.execute(sql, val)
+    mydb.commit() 
+
+    sql = "UPDATE stats SET year_last=0, year_time=0, year_sessions=0, year_songs=0 WHERE user_id=%s"
+    val = (user_id, )
+    mycursor.execute(sql, val)
+    mydb.commit() 
+
+
+
 # user-related functions
 class User():
     """
@@ -42,9 +86,14 @@ class User():
 
         sql = "UPDATE users SET last_online=%s, online=1 WHERE id=%s"
         val = (self.last_online, self.id, )
-
         mycursor.execute(sql, val)
         mydb.commit()
+
+        sql = "SELECT * FROM stats WHERE user_id=%s"
+        val = (self.id, )
+        mycursor.execute(sql, val)
+        result = mycursor.fetchone()
+        self.stats = UserStats(result)
 
 
     def user_quit(self):
@@ -96,6 +145,10 @@ def check_register(first_name, last_name, email, password, confirm_pw):
 
         mycursor.execute(sql, val)
         mydb.commit()
+
+        mycursor.execute("INSERT INTO stats (all_time) VALUES (0)")
+        mydb.commit()
+
         return True
     except Exception as e:
         print(e)
@@ -116,28 +169,6 @@ def delete_user(user_id):
 
     mycursor.execute(sql, val)
     mydb.commit()
-
-
-def reset_user_stats(user_id):
-    sql = "UPDATE stats SET all_last=0, all_time=0, all_sessions=0, all_songs=0 WHERE user_id=%s"
-    val = (user_id, )
-    mycursor.execute(sql, val)
-    mydb.commit() 
-
-    sql = "UPDATE stats SET day_last=0, day_time=0, day_sessions=0, day_songs=0 WHERE user_id=%s"
-    val = (user_id, )
-    mycursor.execute(sql, val)
-    mydb.commit() 
-
-    sql = "UPDATE stats SET month_last=0, month_time=0, month_sessions=0, month_songs=0 WHERE user_id=%s"
-    val = (user_id, )
-    mycursor.execute(sql, val)
-    mydb.commit() 
-
-    sql = "UPDATE stats SET year_last=0, year_time=0, year_sessions=0, year_songs=0 WHERE user_id=%s"
-    val = (user_id, )
-    mycursor.execute(sql, val)
-    mydb.commit() 
 
 
 def get_online():
