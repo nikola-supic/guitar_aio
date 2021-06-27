@@ -220,12 +220,48 @@ def get_name(user_id):
 
         
 # song-related functions
+class Song():
+    """
+    DOCSTRING:
+
+    """
+    def __init__(self, result):
+        self.id = result[0]
+        self.user_id = result[1]
+        self.author = result[2]
+        self.name = result[3]
+        self.chords = result[4]
+        self.times_played = result[5]
+
+
+    def export_txt(self):
+        filename = f'songs/{self.author} - {self.name}.txt'
+
+        with open(filename, 'w', encoding='utf8') as file:
+            file.write(self.chords)
+
+
+    def export_img(self):
+        pass
+
+
+def get_song(song_id):
+    sql = "SELECT * FROM songs WHERE id = %s"
+    val = (song_id, )
+
+    mycursor.execute(sql, val)
+    result = mycursor.fetchone()
+    return Song(result)
+        
+
 def add_song(user_id, author, name, chords):
     sql = "INSERT INTO songs (user_id, author, name, chords) VALUES (%s, %s, %s, %s)"
     val = (user_id, author, name, chords, )
 
     mycursor.execute(sql, val)
+    song_id = mycursor.lastrowid
     mydb.commit()
+    return song_id
 
 
 def search_song(search):
@@ -243,3 +279,49 @@ def delete_song(song_id):
 
     mycursor.execute(sql, val)
     mydb.commit()
+
+
+def get_song_name(song_id):
+    sql = "SELECT author, name FROM songs WHERE id = %s"
+    val = (song_id, )
+
+    mycursor.execute(sql, val)
+    result = mycursor.fetchone()
+    return f'{result[0]} - {result[1]}'
+
+
+# user-songs related functions
+def add_user_song(user_id, song_id):
+    sql = "INSERT INTO user_songs (user_id, song_id) VALUES (%s, %s)"
+    val = (user_id, song_id, )
+
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
+def delete_user_song(user_id, song_id):
+    sql = "DELETE FROM user_songs WHERE user_id = %s AND song_id = %s"
+    val = (user_id, song_id, )
+
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
+def already_in_playlist(user_id, song_id):
+    sql = "SELECT * FROM user_songs WHERE user_id = %s AND song_id = %s"
+    val = (user_id, song_id, )
+    
+    mycursor.execute(sql, val)
+    result = mycursor.fetchall()
+    if not result:
+        return False
+    return True
+
+
+def get_user_songs(user_id):
+    sql = "SELECT song_id FROM user_songs WHERE user_id = %s"
+    val = (user_id, )
+
+    mycursor.execute(sql, val)
+    result = mycursor.fetchall()
+    return result

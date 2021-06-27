@@ -89,16 +89,15 @@ class Ui_SongsScreen(object):
 "    border-radius: 0px;\n"
 "}\n"
 "\n"
-"\n"
-"QPushButton#btn_list, #btn_add, #btn_delete, #btn_export, #btn_empty{\n"
+"QPushButton#btn_list, #btn_add, #btn_delete, #btn_export, #btn_empty, #btn_search {\n"
 "    background-color: rgb(72,72,73);\n"
 "    color: rgb(205, 205, 205);\n"
 "    border: 0px;\n"
 "}\n"
-"QPushButton#btn_list:hover, #btn_add:hover, #btn_delete:hover, #btn_export:hover, #btn_empty:hover {\n"
+"QPushButton#btn_list:hover, #btn_add:hover, #btn_delete:hover, #btn_export:hover, #btn_empty:hover, #btn_search:hover {\n"
 "    background-color: rgb(157, 121, 95);\n"
 "}\n"
-"QPushButton#btn_list:pressed, #btn_add:pressed, #btn_delete:pressed, #btn_export:pressed, #btn_empty:pressed {\n"
+"QPushButton#btn_list:pressed, #btn_add:pressed, #btn_delete:pressed, #btn_export:pressed, #btn_empty:pressed, #btn_search:pressed {\n"
 "    background-color: rgba(130, 100, 78, 255);\n"
 "}\n"
 "")
@@ -145,6 +144,16 @@ class Ui_SongsScreen(object):
         self.btn_export.setFont(font)
         self.btn_export.setStyleSheet("")
         self.btn_export.setObjectName("btn_export")
+        self.btn_search = QtWidgets.QPushButton(self.frame_left)
+        self.btn_search.setGeometry(QtCore.QRect(0, 160, 80, 40))
+        font = QtGui.QFont()
+        font.setFamily("Dubai")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.btn_search.setFont(font)
+        self.btn_search.setStyleSheet("")
+        self.btn_search.setObjectName("btn_search")
         self.frame_pages = QtWidgets.QFrame(self.frame)
         self.frame_pages.setGeometry(QtCore.QRect(80, 50, 410, 600))
         self.frame_pages.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -153,15 +162,15 @@ class Ui_SongsScreen(object):
         self.stackedWidget = QtWidgets.QStackedWidget(self.frame_pages)
         self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 410, 600))
         self.stackedWidget.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.stackedWidget.setStyleSheet("QPushButton#btn_export_txt, #btn_export_img, #btn_create, #btn_delete_id {\n"
+        self.stackedWidget.setStyleSheet("QPushButton#btn_export_txt, #btn_export_img, #btn_create, #btn_delete_id, #btn_search_2 {\n"
 "    background-color: rgba(157, 121, 95, 255);\n"
 "    color: rgba(255, 255, 255, 210);\n"
 "    border-radius: 5px;\n"
 "}\n"
-"QPushButton#btn_export_txt:hover , #btn_export_img:hover, #btn_create:hover, #btn_delete_id:hover {\n"
+"QPushButton#btn_export_txt:hover , #btn_export_img:hover, #btn_create:hover, #btn_delete_id:hover, #btn_search_2:hover {\n"
 "    background-color: rgba(143, 110, 86, 255);\n"
 "}\n"
-"QPushButton#btn_export_txt:pressed , #btn_export_img:pressed, #btn_create:pressed, #btn_delete_id:pressed {\n"
+"QPushButton#btn_export_txt:pressed , #btn_export_img:pressed, #btn_create:pressed, #btn_delete_id:pressed, #btn_search_2:pressed {\n"
 "    background-color: rgba(130, 100, 78, 255);\n"
 "}\n"
 "\n"
@@ -230,54 +239,6 @@ class Ui_SongsScreen(object):
         self.list_songs.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.list_songs.setWordWrap(False)
         self.list_songs.setObjectName("list_songs")
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
-        item = QtWidgets.QListWidgetItem()
-        self.list_songs.addItem(item)
         self.label_line = QtWidgets.QLabel(self.page_list)
         self.label_line.setGeometry(QtCore.QRect(12, -20, 130, 61))
         font = QtGui.QFont()
@@ -532,6 +493,100 @@ class Ui_SongsScreen(object):
         self.btn_export_txt.raise_()
         self.btn_export_img.raise_()
         self.stackedWidget.addWidget(self.page_export)
+        self.page_search = QtWidgets.QWidget()
+        self.page_search.setObjectName("page_search")
+        self.label_line_5 = QtWidgets.QLabel(self.page_search)
+        self.label_line_5.setGeometry(QtCore.QRect(12, -20, 130, 61))
+        font = QtGui.QFont()
+        font.setPointSize(32)
+        self.label_line_5.setFont(font)
+        self.label_line_5.setStyleSheet("color: rgba(255,255,255,255);")
+        self.label_line_5.setObjectName("label_line_5")
+        self.label_search = QtWidgets.QLabel(self.page_search)
+        self.label_search.setGeometry(QtCore.QRect(10, 2, 130, 30))
+        font = QtGui.QFont()
+        font.setFamily("Dubai")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_search.setFont(font)
+        self.label_search.setStyleSheet("color: rgba(0,0,0,150);\n"
+"background-color: rgba(0,0,0,0);")
+        self.label_search.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_search.setObjectName("label_search")
+        self.label_search_2 = QtWidgets.QLabel(self.page_search)
+        self.label_search_2.setGeometry(QtCore.QRect(135, 7, 265, 20))
+        font = QtGui.QFont()
+        font.setFamily("Dubai")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_search_2.setFont(font)
+        self.label_search_2.setStyleSheet("color: rgba(0,0,0,150);\n"
+"background-color: rgba(0,0,0,0);")
+        self.label_search_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_search_2.setObjectName("label_search_2")
+        self.input_search = QtWidgets.QLineEdit(self.page_search)
+        self.input_search.setGeometry(QtCore.QRect(10, 40, 390, 31))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.input_search.setFont(font)
+        self.input_search.setStyleSheet("")
+        self.input_search.setObjectName("input_search")
+        self.label_search_3 = QtWidgets.QPlainTextEdit(self.page_search)
+        self.label_search_3.setGeometry(QtCore.QRect(10, 80, 390, 70))
+        font = QtGui.QFont()
+        font.setFamily("Dubai")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_search_3.setFont(font)
+        self.label_search_3.setStyleSheet("")
+        self.label_search_3.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.label_search_3.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.label_search_3.setReadOnly(True)
+        self.label_search_3.setObjectName("label_search_3")
+        self.btn_search_2 = QtWidgets.QPushButton(self.page_search)
+        self.btn_search_2.setGeometry(QtCore.QRect(10, 140, 390, 40))
+        font = QtGui.QFont()
+        font.setFamily("Dubai")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.btn_search_2.setFont(font)
+        self.btn_search_2.setStyleSheet("")
+        self.btn_search_2.setObjectName("btn_search_2")
+        self.list_search = QtWidgets.QListWidget(self.page_search)
+        self.list_search.setGeometry(QtCore.QRect(10, 190, 390, 400))
+        font = QtGui.QFont()
+        font.setFamily("Dubai")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.list_search.setFont(font)
+        self.list_search.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.list_search.setStyleSheet("QListWidget#list_search {\n"
+"    color: rgb(72,72,73);\n"
+"    background-color: rgba(205,205,205,150);\n"
+"    border-radius: 5px;\n"
+"    border: 2px solid rgba(157, 121, 95, 255);\n"
+"}\n"
+"QListWidget::item:hover {\n"
+"    color: rgb(205, 205, 205);\n"
+"    background-color: rgba(157, 121, 95, 210);\n"
+"}\n"
+"QListWidget::item:selected {\n"
+"    color: rgb(205, 205, 205);\n"
+"    background-color: rgba(157, 121, 95, 255);\n"
+"}")
+        self.list_search.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.list_search.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.list_search.setWordWrap(False)
+        self.list_search.setObjectName("list_search")
+        self.stackedWidget.addWidget(self.page_search)
         self.page_empty = QtWidgets.QWidget()
         self.page_empty.setObjectName("page_empty")
         self.stackedWidget.addWidget(self.page_empty)
@@ -556,7 +611,7 @@ class Ui_SongsScreen(object):
         SongsScreen.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(SongsScreen)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(SongsScreen)
 
     def retranslateUi(self, SongsScreen):
@@ -569,58 +624,8 @@ class Ui_SongsScreen(object):
         self.btn_add.setText(_translate("SongsScreen", "ADD"))
         self.btn_delete.setText(_translate("SongsScreen", "DELETE"))
         self.btn_export.setText(_translate("SongsScreen", "EXPORT"))
+        self.btn_search.setText(_translate("SongsScreen", "SEARCH"))
         self.label_songs.setText(_translate("SongsScreen", "YOUR SONG LIST"))
-        __sortingEnabled = self.list_songs.isSortingEnabled()
-        self.list_songs.setSortingEnabled(False)
-        item = self.list_songs.item(0)
-        item.setText(_translate("SongsScreen", "1 ) Dino Merlin - Laku noc moja mala barbiko"))
-        item = self.list_songs.item(1)
-        item.setText(_translate("SongsScreen", "2"))
-        item = self.list_songs.item(2)
-        item.setText(_translate("SongsScreen", "3"))
-        item = self.list_songs.item(3)
-        item.setText(_translate("SongsScreen", "4"))
-        item = self.list_songs.item(4)
-        item.setText(_translate("SongsScreen", "5"))
-        item = self.list_songs.item(5)
-        item.setText(_translate("SongsScreen", "6"))
-        item = self.list_songs.item(6)
-        item.setText(_translate("SongsScreen", "7"))
-        item = self.list_songs.item(7)
-        item.setText(_translate("SongsScreen", "8"))
-        item = self.list_songs.item(8)
-        item.setText(_translate("SongsScreen", "9"))
-        item = self.list_songs.item(9)
-        item.setText(_translate("SongsScreen", "10"))
-        item = self.list_songs.item(10)
-        item.setText(_translate("SongsScreen", "11"))
-        item = self.list_songs.item(11)
-        item.setText(_translate("SongsScreen", "12"))
-        item = self.list_songs.item(12)
-        item.setText(_translate("SongsScreen", "13"))
-        item = self.list_songs.item(13)
-        item.setText(_translate("SongsScreen", "14"))
-        item = self.list_songs.item(14)
-        item.setText(_translate("SongsScreen", "15"))
-        item = self.list_songs.item(15)
-        item.setText(_translate("SongsScreen", "16"))
-        item = self.list_songs.item(16)
-        item.setText(_translate("SongsScreen", "17"))
-        item = self.list_songs.item(17)
-        item.setText(_translate("SongsScreen", "18"))
-        item = self.list_songs.item(18)
-        item.setText(_translate("SongsScreen", "19"))
-        item = self.list_songs.item(19)
-        item.setText(_translate("SongsScreen", "20"))
-        item = self.list_songs.item(20)
-        item.setText(_translate("SongsScreen", "21"))
-        item = self.list_songs.item(21)
-        item.setText(_translate("SongsScreen", "22"))
-        item = self.list_songs.item(22)
-        item.setText(_translate("SongsScreen", "23"))
-        item = self.list_songs.item(23)
-        item.setText(_translate("SongsScreen", "24"))
-        self.list_songs.setSortingEnabled(__sortingEnabled)
         self.label_line.setText(_translate("SongsScreen", "________________"))
         self.label_songs_2.setText(_translate("SongsScreen", "- See your playlist"))
         self.label_line_4.setText(_translate("SongsScreen", "________________"))
@@ -635,7 +640,7 @@ class Ui_SongsScreen(object):
         self.label_delete_2.setText(_translate("SongsScreen", "DELETE SONG"))
         self.label_delete_3.setPlainText(_translate("SongsScreen", "Use button below to delete song from  your playlist.\n"
 "You can add it later again."))
-        self.input_delete.setPlaceholderText(_translate("SongsScreen", "Song id"))
+        self.input_delete.setPlaceholderText(_translate("SongsScreen", "Song ID"))
         self.btn_delete_id.setText(_translate("SongsScreen", "DELETE"))
         self.label_line_2.setText(_translate("SongsScreen", "________________"))
         self.label_export_2.setText(_translate("SongsScreen", "- Export your playlist"))
@@ -646,4 +651,10 @@ class Ui_SongsScreen(object):
 "Playlist will be saved as text files."))
         self.label_export_4.setPlainText(_translate("SongsScreen", "Use button below to export your playlist.\n"
 "Playlist will be saved as images."))
+        self.label_line_5.setText(_translate("SongsScreen", "________________"))
+        self.label_search.setText(_translate("SongsScreen", "SEARCH SONG"))
+        self.label_search_2.setText(_translate("SongsScreen", "- Search for song to add to your playlist"))
+        self.input_search.setPlaceholderText(_translate("SongsScreen", "Song name/author"))
+        self.label_search_3.setPlainText(_translate("SongsScreen", "Use button below to search for song and add it to your playlist."))
+        self.btn_search_2.setText(_translate("SongsScreen", "SEARCH"))
 import res_rc

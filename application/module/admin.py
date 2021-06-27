@@ -126,11 +126,10 @@ class AdminScreen(QMainWindow, Ui_AdminScreen):
             result = db.search_song(name)
             for item in result:
                 song_id = item[0]
-                user_id = item[1]
+                user_name = db.get_name(item[1])
                 song_name = f'{item[2]} - {item[3]}'
-                times_played = item[5]
 
-                item = QtWidgets.QListWidgetItem(f'#{song_id} // User ID: {user_id} // {song_name}')
+                item = QtWidgets.QListWidgetItem(f'#{song_id} // User ID: {user_name} // {song_name}')
                 self.list_search.addItem(item)
 
 
