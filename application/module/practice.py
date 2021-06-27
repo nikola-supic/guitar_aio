@@ -49,17 +49,17 @@ class PracticeScreen(QMainWindow, Ui_PracticeScreen):
 
         # Opening animation
         self.anim_1 = QPropertyAnimation(self.widget_left, b"geometry")
-        self.anim_1.setDuration(2000)
+        self.anim_1.setDuration(1500)
         self.anim_1.setStartValue(QtCore.QRect(200, 50, 0, 550))
         self.anim_1.setEndValue(QtCore.QRect(0, 50, 200, 550))
-        self.anim_1.setEasingCurve(QtCore.QEasingCurve.OutBounce)
+        self.anim_1.setEasingCurve(QtCore.QEasingCurve.OutQuad)
         self.anim_1.start()
 
         self.anim_2 = QPropertyAnimation(self.widget_right, b"geometry")
-        self.anim_2.setDuration(2000)
+        self.anim_2.setDuration(1500)
         self.anim_2.setStartValue(QtCore.QRect(690, 50, 0, 550))
         self.anim_2.setEndValue(QtCore.QRect(690, 50, 90, 550))
-        self.anim_2.setEasingCurve(QtCore.QEasingCurve.OutBounce)
+        self.anim_2.setEasingCurve(QtCore.QEasingCurve.OutQuad)
         self.anim_2.start()
 
         self.anim_group = QParallelAnimationGroup()
