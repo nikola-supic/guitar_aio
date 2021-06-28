@@ -354,7 +354,7 @@ def already_in_playlist(user_id, song_id):
     val = (user_id, song_id, )
     
     mycursor.execute(sql, val)
-    result = mycursor.fetchall()
+    result = mycursor.fetchone()
     if not result:
         return False
     return True

@@ -82,4 +82,3 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
     def exit(self):
         self.user.user_quit()
         sys.exit()
-

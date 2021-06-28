@@ -139,13 +139,18 @@ class SongsScreen(QMainWindow, Ui_SongsScreen):
 
     def add_user_song(self):
         selected = self.list_search.selectedItems()
-        song_id = selected[0].text()[1:2]
+        song_id = selected[0].text()[1:]
+        song_id = song_id.split()[0]
 
         if not db.already_in_playlist(self.user.id, song_id):
             db.add_user_song(self.user.id, song_id)
             self.popup = PopupInfo(self, "You have successfully added song to your playlist.", 'ADDED')
             self.close()
             self.update_list()
+        else:
+            self.popup = PopupInfo(self, "This song is already on your playlist.", 'ADDED')
+            self.close()
+
 
 
     def exit(self):
