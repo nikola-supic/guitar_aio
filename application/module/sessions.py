@@ -16,7 +16,7 @@ class SessionsScreen(QMainWindow, Ui_SessionsScreen):
         self.back = last_screen
         self.user = user
         self.frame_left.setGeometry(QtCore.QRect(0, 50, 0, 600))
-        self.stackedWidget.setCurrentWidget(self.page_empty)
+        self.stacked_pages.setCurrentWidget(self.page_add)
         self.update_list()
 
         # Remove title bar
@@ -73,7 +73,7 @@ class SessionsScreen(QMainWindow, Ui_SessionsScreen):
 
 
     def request_session(self):
-        session_id = self.input_session.text()
+        session_id = self.input_session.plainText()
 
         if session_id:
             self.input_session.setText('')

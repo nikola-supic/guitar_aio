@@ -341,6 +341,14 @@ def add_user_song(user_id, song_id):
     mydb.commit()
 
 
+def add_all_song(user_id):
+    mycursor.execute("SELECT id FROM songs")
+    result = mycursor.fetchall()
+
+    for song in result:
+        add_user_song(user_id, song[0])
+
+
 def delete_user_song(user_id, song_id):
     sql = "DELETE FROM user_songs WHERE user_id = %s AND song_id = %s"
     val = (user_id, song_id, )

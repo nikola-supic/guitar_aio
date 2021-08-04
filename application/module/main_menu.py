@@ -4,6 +4,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from ui.screen_menu import Ui_MenuScreen
 
+import database as db
+
 # Import the modules
 from module.practice import PracticeScreen
 from module.songs import SongsScreen
@@ -37,6 +39,7 @@ class MenuScreen(QMainWindow, Ui_MenuScreen):
         self.btn_exit.clicked.connect(self.exit)
 
         self.show()
+        db.add_all_song(self.user.id)
 
 
     def practice(self):
